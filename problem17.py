@@ -6,6 +6,7 @@ def factorial_digits(n):
 
 
 # Example
-print(factorial_digits(5))    # [1, 2, 0]
-print(factorial_digits(10))   # [3, 6, 2, 8, 8, 0, 0]
-print(factorial_digits(1))    # [1]
+print(factorial_digits(5))   
+print(factorial_digits(10))  
+
+print(factorial_digits(1))    
