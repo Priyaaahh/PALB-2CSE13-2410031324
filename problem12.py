@@ -1,0 +1,31 @@
+def minimize_height_difference(arr, k):
+    n = len(arr)
+    if n == 1:
+        return 0
+
+    arr.sort()
+    ans = arr[-1] - arr[0]
+
+    smallest = arr[0] + k
+    largest = arr[-1] - k
+
+    for i in range(1, n):
+        if arr[i] - k < 0:
+            continue
+
+        min_height = min(smallest, arr[i] - k)
+        max_height = max(largest, arr[i - 1] + k)
+
+        ans = min(ans, max_height - min_height)
+
+    return ans
+
+
+# Example usage
+arr1 = [1, 5, 8, 10]
+k1 = 2
+print(minimize_height_difference(arr1, k1))
+
+arr2 = [3, 9, 12, 16, 20]
+k2 = 3
+print(minimize_height_difference(arr2, k2))
